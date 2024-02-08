@@ -17,12 +17,12 @@ def test_under_sixteen():
 
 #Given an invalid input (wrong format date), it will return an exception stating "Invalid format, please input date of birth in the following format: YYYY-MM-DD"
 
-# def test_wrong_format_date():
-
-#     with pytest.raises(Exception) as e:
-#         age_checker("16/03/2009")
-#     error_message = str(e.value)
-#     assert error_message == "time data '16/03/2009' does not match format '%Y-%m-%d'"
-    
 def test_wrong_format_date():
-    assert age_checker("16/03/2009") == ""
+
+    with pytest.raises(ValueError) as e:
+        age_checker("16/03/2009")
+    error_message = str(e.value)
+    assert error_message == "Invalid format, please input date of birth in the following format: YYYY-MM-DD"
+    
+# def test_wrong_format_date():
+#     assert age_checker("16/03/2009") == ""

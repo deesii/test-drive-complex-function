@@ -21,6 +21,7 @@ def test_wrong_format_date():
 
     with pytest.raises(ValueError) as e:
         age_checker("16/03/2009")
+    #the following code is unnecssary if we just want the program to capture the exception from datetime.strptime function
     error_message = str(e.value)
     assert error_message == "Invalid format, please input date of birth in the following format: YYYY-MM-DD"
     
